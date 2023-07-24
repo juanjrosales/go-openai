@@ -25,6 +25,13 @@ type ChatCompletionStreamResponse struct {
 	Model             string                       `json:"model"`
 	Choices           []ChatCompletionStreamChoice `json:"choices"`
 	PromptAnnotations []PromptAnnotation           `json:"prompt_annotations,omitempty"`
+	Usage             ChatCompletionUsage          `json:"usage"`
+}
+
+type ChatCompletionUsage struct {
+	PromptTokens     int `json:"prompt_tokens"`
+	CompletionTokens int `json:"completion_tokens"`
+	TotalTokens      int `json:"total_tokens"`
 }
 
 // ChatCompletionStream
